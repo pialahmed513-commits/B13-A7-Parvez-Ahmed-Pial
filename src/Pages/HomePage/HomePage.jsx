@@ -1,20 +1,21 @@
-import React, { Suspense } from 'react'; // ১. Suspense ইমপোর্ট করুন
-import Banner from '../../Component/Navber/HomePage/Banner';
+import React, { Suspense } from 'react';
+import Banner from '../../Component/Navber/HomePage/Banner'; // আপনার ফোল্ডার পাথ অনুযায়ী
 import AllFriends from '../../Component/Navber/HomePage/AllFriends';
 
 const HomePage = () => {
     return (
-        <div>
-            <Banner></Banner>
+        <div className="bg-[#F8FAFC] min-h-screen"> 
+            {/* ১. ব্যানার সেকশন */}
+            <Banner />
             
-            {/* ২. AllFriends কে Suspense এর ভেতরে রাখুন */}
+            {/* ২. ফ্রেন্ডস লিস্ট উইথ সাসপেন্স */}
             <Suspense fallback={
-                <div className="flex justify-center items-center my-20">
-                    <span className="loading loading-spinner loading-lg text-primary"></span>
-                    <p className="ml-4 text-xl font-medium">Loading Friends...</p>
+                <div className="flex flex-col justify-center items-center my-32">
+                    <span className="loading loading-spinner loading-lg text-[#2D4F40]"></span>
+                    <p className="mt-4 text-gray-500 font-medium">Fetching your friends list...</p>
                 </div>
             }>
-                <AllFriends></AllFriends>
+                <AllFriends />
             </Suspense>
         </div>
     );
