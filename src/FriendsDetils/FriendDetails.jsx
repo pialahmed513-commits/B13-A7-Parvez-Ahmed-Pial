@@ -1,29 +1,51 @@
 import React, { use } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // useNavigate ইমপোর্ট করুন
 import { Phone, MessageSquare, Video, Bell, Archive, Trash2, Edit } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// ডাটা ফেচিং প্রমিজ (আপনার JSON ফাইল থেকে)
 const friendsPromise = fetch('/AllFriendsData.json').then(res => res.json());
 
 const FriendDetails = () => {
-    const { id } = useParams(); // URL থেকে ফ্রেন্ড আইডি নেওয়া
+    const { id } = useParams();
+    const navigate = useNavigate(); // নেভিগেশন হুক
     const allFriends = use(friendsPromise);
     
-    // আইডি অনুযায়ী সঠিক ফ্রেন্ডকে খুঁজে বের করা
     const friend = allFriends.find(f => f.id === parseInt(id));
 
-    // কুইক চেক-ইন ফাংশন
+    // কুইক চেক-ইন ফাংশন (আপডেটেড)
     const handleAction = (type) => {
-        toast.success(`${type} added for ${friend.name}!`);
+        // ১. নতুন টাইমলাইন এন্ট্রি তৈরি
+        const newEntry = {
+            id: Date.now(),
+            friendName: friend.name,
+            type: type, // Call, Text, or Video
+            date: new Date().toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric', 
+                year: 'numeric' 
+            }),
+            title: `${type} with ${friend.name}`
+        };
+
+        // ২. localStorage এ ডেটা পুশ করা
+        const existingEntries = JSON.parse(localStorage.getItem('timeline')) || [];
+        localStorage.setItem('timeline', JSON.stringify([newEntry, ...existingEntries]));
+
+        // ৩. টোস্ট নোটিফিকেশন দেখানো
+        toast.success(`${type} logged for ${friend.name}!`);
+
+        // ৪. সামান্য দেরি করে টাইমলাইন পেজে নিয়ে যাওয়া
+        setTimeout(() => {
+            navigate('/timeline');
+        }, 1200);
     };
 
     if (!friend) return <div className="text-center py-20">Loading Friend Details...</div>;
 
     return (
         <div className="max-w-6xl mx-auto p-6 md:p-10 min-h-screen bg-[#F8FAFC]">
-            <ToastContainer position="top-center" autoClose={1500} />
+            <ToastContainer position="top-center" autoClose={1000} />
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
                 
@@ -37,7 +59,6 @@ const FriendDetails = () => {
                         />
                         <h2 className="text-2xl font-bold mt-4 text-gray-900">{friend.name}</h2>
                         
-                        {/* স্ট্যাটাস এবং ট্যাগস */}
                         <div className="mt-2 inline-block px-4 py-1 rounded-full bg-red-100 text-red-500 text-[10px] font-bold uppercase tracking-wider">
                             {friend.status}
                         </div>
@@ -57,7 +78,6 @@ const FriendDetails = () => {
                         </p>
                     </div>
 
-                    {/* অ্যাকশন বাটনসমূহ */}
                     <div className="space-y-3">
                         <button className="btn btn-outline w-full flex justify-center gap-2 border-gray-200 rounded-2xl hover:bg-gray-50 text-gray-600">
                             <Bell size={18} /> Snooze 2 Weeks
@@ -74,7 +94,6 @@ const FriendDetails = () => {
                 {/* ➡️ ডান কলাম: স্ট্যাটাস ও গোল */}
                 <div className="md:col-span-8 space-y-6">
                     
-                    {/* স্ট্যাটাস কার্ডস */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div className="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm">
                             <h3 className="text-4xl font-bold text-[#2D4F40]">{friend.days_since_contact}</h3>
@@ -90,7 +109,6 @@ const FriendDetails = () => {
                         </div>
                     </div>
 
-                    {/* রিলেশনশিপ গোল কার্ড */}
                     <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm relative">
                         <button className="absolute top-6 right-6 btn btn-xs btn-ghost border border-gray-100 font-bold text-gray-500 rounded-lg">
                             <Edit size={12} className="mr-1" /> Edit
@@ -101,7 +119,6 @@ const FriendDetails = () => {
                         </p>
                     </div>
 
-                    {/* কুইক চেক-ইন কার্ড */}
                     <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
                         <h4 className="font-bold text-gray-800 text-lg mb-6">Quick Check-In</h4>
                         <div className="grid grid-cols-3 gap-4">
