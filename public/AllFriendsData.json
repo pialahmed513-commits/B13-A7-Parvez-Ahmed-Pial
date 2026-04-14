@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Arif Ahmed",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+    "email": "arif.ahmed@example.com",
+    "days_since_contact": 15,
+    "status": "overdue",
+    "tags": ["School", "Bestie"],
+    "bio": "Childhood friend. We share a common interest in classical music and football.",
+    "goal": 7,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 2,
+    "name": "Nila Islam",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+    "email": "nila.islam@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["Work", "Colleague"],
+    "bio": "Senior developer and mentor. Great at solving complex architectural problems.",
+    "goal": 14,
+    "next_due_date": "2026-04-28"
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Hasan",
+    "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+    "email": "tanvir.h@example.com",
+    "days_since_contact": 6,
+    "status": "almost due",
+    "tags": ["College", "Gym"],
+    "bio": "Fitness enthusiast and a very organized person. Always ready for a trek.",
+    "goal": 7,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 4,
+    "name": "Sajid Khan",
+    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    "email": "sajid.khan@example.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["Neighborhood", "Gaming"],
+    "bio": "Best gaming partner since high school. We usually play RPGs together.",
+    "goal": 10,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 5,
+    "name": "Riya Das",
+    "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+    "email": "riya.das@example.com",
+    "days_since_contact": 1,
+    "status": "on-track",
+    "tags": ["University", "Close Friend"],
+    "bio": "Incredibly creative designer. We often collaborate on freelance projects.",
+    "goal": 5,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 6,
+    "name": "Mahmudul Haque",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+    "email": "mahmud.h@example.com",
+    "days_since_contact": 8,
+    "status": "almost due",
+    "tags": ["Tech", "Startup"],
+    "bio": "Entrepreneurial mindset. We discuss business ideas every weekend.",
+    "goal": 7,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 7,
+    "name": "Fariha Sultana",
+    "picture": "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400",
+    "email": "fariha.s@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["Photography", "Travel"],
+    "bio": "Adventurous traveler who loves nature photography. Met during a tour.",
+    "goal": 30,
+    "next_due_date": "2026-05-10"
+  },
+  {
+    "id": 8,
+    "name": "Zayan Malik",
+    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+    "email": "zayan.m@example.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["Cousin", "Family"],
+    "bio": "Family member but more like a friend. Very supportive and kind-hearted.",
+    "goal": 15,
+    "next_due_date": "2026-04-12"
+  },
+  {
+    "id": 9,
+    "name": "Sara Kabir",
+    "picture": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400",
+    "email": "sara.k@example.com",
+    "days_since_contact": 4,
+    "status": "on-track",
+    "tags": ["Reading Club", "Intellectual"],
+    "bio": "Loves discussing literature and philosophy. A very insightful person.",
+    "goal": 7,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 10,
+    "name": "Imtiaz Ahmed",
+    "picture": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400",
+    "email": "imtiaz.a@example.com",
+    "days_since_contact": 9,
+    "status": "almost due",
+    "tags": ["School", "Old Friend"],
+    "bio": "Met in primary school. We still try to catch up once a month.",
+    "goal": 20,
+    "next_due_date": "2026-04-19"
+  }
+]
