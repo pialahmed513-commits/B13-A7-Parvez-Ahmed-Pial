@@ -10,9 +10,9 @@ const AllFriends = () => {
   
     const getStatusStyle = (status) => {
         const s = status.toLowerCase();
-        if (s === 'overdue') return 'bg-[#FF5252] text-white'; // লাল
-        if (s === 'almost due') return 'bg-[#FFB74D] text-white'; // কমলা
-        return 'bg-[#2D4F40] text-white'; // ডার্ক গ্রিন
+        if (s === 'overdue') return 'bg-[#FF5252] text-white'; 
+        if (s === 'almost due') return 'bg-[#FFB74D] text-white'; 
+        return 'bg-[#2D4F40] text-white'; 
     };
 
     return (

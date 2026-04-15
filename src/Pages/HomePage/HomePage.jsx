@@ -13,7 +13,8 @@ const HomePage = () => {
             <Suspense fallback={
                 <div className="flex flex-col justify-center items-center my-32">
                     <span className="loading loading-spinner loading-lg text-[#2D4F40]"></span>
-                    <p className="mt-4 text-gray-500 font-medium">Fetching your friends list...</p>
+                    <p className="mt-4 text-gray-500 font-medium">
+                        All Friends list...</p>
                 </div>
             }>
                 <AllFriends />

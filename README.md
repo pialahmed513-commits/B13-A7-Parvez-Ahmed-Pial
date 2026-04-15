@@ -4,7 +4,7 @@ KeenKeeper is a modern web application designed to help you nurture and manage y
 
 
 
-## 🚀 Technologies Used
+##  Technologies Used
 
 This project was built using modern frontend technologies for performance and responsiveness:
 
@@ -19,13 +19,13 @@ This project was built using modern frontend technologies for performance and re
 
 ##  Key Features
 
-### 1. Interactive Timeline ⏳
+### 1. Interactive Timeline 
 Keep a chronological log of all your interactions. Whether it's a phone call, a text message, or a video chat, the timeline helps you visualize your history with friends and ensures you never lose touch.
 
-### 2. Modern Bento Grid Design 🍱
+### 2. Modern Bento Grid Design 
 Inspired by modern design trends, the project features a clean, responsive "Bento Grid" and "Dark Theme" aesthetics (specifically the Footer) that makes browsing your friends list enjoyable on any device—mobile, tablet, or desktop.
 
-### 3. Interaction Filtering 🔍
+### 3. Interaction Filtering 
 Easily sort through your history with a powerful filtering system. You can filter your timeline by specific interaction types (Calls, Texts, or Videos) to find exactly what you're looking for in seconds.
 
 
