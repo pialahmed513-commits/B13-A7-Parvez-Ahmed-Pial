@@ -1,5 +1,5 @@
 import React, { use } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // useNavigate ইমপোর্ট করুন
+import { useParams, useNavigate } from 'react-router-dom'; 
 import { Phone, MessageSquare, Video, Bell, Archive, Trash2, Edit } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,14 +8,14 @@ const friendsPromise = fetch('/AllFriendsData.json').then(res => res.json());
 
 const FriendDetails = () => {
     const { id } = useParams();
-    const navigate = useNavigate(); // নেভিগেশন হুক
+    const navigate = useNavigate();
     const allFriends = use(friendsPromise);
     
     const friend = allFriends.find(f => f.id === parseInt(id));
 
-    // কুইক চেক-ইন ফাংশন (আপডেটেড)
+   
     const handleAction = (type) => {
-        // ১. নতুন টাইমলাইন এন্ট্রি তৈরি
+      
         const newEntry = {
             id: Date.now(),
             friendName: friend.name,
@@ -28,14 +28,14 @@ const FriendDetails = () => {
             title: `${type} with ${friend.name}`
         };
 
-        // ২. localStorage এ ডেটা পুশ করা
+    
         const existingEntries = JSON.parse(localStorage.getItem('timeline')) || [];
         localStorage.setItem('timeline', JSON.stringify([newEntry, ...existingEntries]));
 
-        // ৩. টোস্ট নোটিফিকেশন দেখানো
+  
         toast.success(`${type} logged for ${friend.name}!`);
 
-        // ৪. সামান্য দেরি করে টাইমলাইন পেজে নিয়ে যাওয়া
+    
         setTimeout(() => {
             navigate('/timeline');
         }, 1200);
@@ -49,7 +49,7 @@ const FriendDetails = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
                 
-                {/* ⬅️ বাম কলাম: প্রোফাইল কার্ড */}
+              
                 <div className="md:col-span-4 space-y-6">
                     <div className="bg-white border border-gray-100 rounded-[32px] p-8 text-center shadow-sm">
                         <img 
@@ -91,7 +91,7 @@ const FriendDetails = () => {
                     </div>
                 </div>
 
-                {/* ➡️ ডান কলাম: স্ট্যাটাস ও গোল */}
+
                 <div className="md:col-span-8 space-y-6">
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

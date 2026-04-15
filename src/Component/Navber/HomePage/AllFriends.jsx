@@ -1,13 +1,13 @@
 import React, { use } from 'react';
 import { Link } from 'react-router-dom';
 
-// ডাটা ফেচিং প্রমিজ
+
 const friendsPromise = fetch('/AllFriendsData.json').then(res => res.json());
 
 const AllFriends = () => {
     const friends = use(friendsPromise);
 
-    // স্ট্যাটাস অনুযায়ী ডাইনামিক কালার নির্ধারণ
+  
     const getStatusStyle = (status) => {
         const s = status.toLowerCase();
         if (s === 'overdue') return 'bg-[#FF5252] text-white'; // লাল
@@ -19,7 +19,7 @@ const AllFriends = () => {
         <div className='max-w-7xl mx-auto px-4 mb-20'>
             <h1 className='text-3xl font-bold text-center mt-10 mb-10'>Your Friends</h1>
 
-            {/* ৪ কলামের গ্রিড লেআউট */}
+    
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                 {
                     friends.map((friend) => (
@@ -28,9 +28,9 @@ const AllFriends = () => {
                             key={friend.id}
                             className="card bg-base-100 border border-gray-100 rounded-[32px] shadow-sm hover:shadow-md transition-all cursor-pointer group"
                         >
-                            {/* ১. ফিগার (ছবি সেকশন) */}
+                       
                             <figure className="pt-8">
-                                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-50 group-hover:scale-105 transition-transform">
+                                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-50">
                                     <img
                                         src={friend.picture}
                                         alt={friend.name}
@@ -39,7 +39,7 @@ const AllFriends = () => {
                                 </div>
                             </figure>
 
-                            {/* ২. কার্ড বডি */}
+                        
                             <div className="card-body items-center text-center p-8">
                                 <h2 className="card-title text-xl font-bold text-gray-900">
                                     {friend.name}
@@ -49,7 +49,7 @@ const AllFriends = () => {
                                     {friend.days_since_contact}d ago
                                 </p>
 
-                                {/* ৩. ট্যাগস (ক্যাটাগরি) */}
+                            
                                 <div className="card-actions justify-center mt-2">
                                     {friend.tags.map((tag, index) => (
                                         <div 
@@ -61,7 +61,7 @@ const AllFriends = () => {
                                     ))}
                                 </div>
 
-                                {/* ৪. স্ট্যাটাস পিল (রঙিন বাটন) */}
+                           
                                 <div className={`mt-4 px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest ${getStatusStyle(friend.status)}`}>
                                     {friend.status}
                                 </div>

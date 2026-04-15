@@ -4,7 +4,7 @@ import { SquarePlus } from 'lucide-react';
 const Banner = () => {
     return (
         <div className='mt-10 md:mt-14 px-4'>
-            {/* Banner Content */}
+    
             <div className='flex flex-col items-center justify-center text-center'>
                 <h1 className='text-3xl md:text-4xl font-bold text-gray-800'>
                     Friends to keep close in your life
@@ -21,25 +21,25 @@ const Banner = () => {
           
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 max-w-6xl mx-auto'>
                 
-                {/* Box 1 */}
+             
                 <div className='border-2 rounded-xl p-8 text-center shadow-sm'>
                     <h2 className='text-4xl font-bold'>10</h2>
                     <p className='text-gray-500 mt-2'>Total Friends</p>
                 </div>
 
-                {/* Box 2 */}
+           
                 <div className='border-2 rounded-xl p-8 text-center shadow-sm'>
                     <h2 className='text-4xl font-bold'>3</h2>
                     <p className='text-gray-500 mt-2'>On Track</p>
                 </div>
 
-                {/* Box 3 */}
+            
                 <div className='border-2 rounded-xl p-8 text-center shadow-sm'>
                     <h2 className='text-4xl font-bold'>6</h2>
                     <p className='text-gray-500 mt-2'>Need Attention</p>
                 </div>
 
-                {/* Box 4 */}
+           
                 <div className='border-2 rounded-xl p-8 text-center shadow-sm'>
                     <h2 className='text-4xl font-bold'>12</h2>
                     <p className='text-gray-500 mt-2'>Interactions This Month</p>

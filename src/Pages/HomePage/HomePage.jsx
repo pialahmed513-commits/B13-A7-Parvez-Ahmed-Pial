@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
-import Banner from '../../Component/Navber/HomePage/Banner'; // আপনার ফোল্ডার পাথ অনুযায়ী
+import Banner from '../../Component/Navber/HomePage/Banner'; 
 import AllFriends from '../../Component/Navber/HomePage/AllFriends';
-import Navbar from '../../Component/Navber/Navbar';
-import Footer from '../../Component/Navber/Footer/Footer';
+
 
 const HomePage = () => {
     return (
